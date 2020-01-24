@@ -1,1 +1,35 @@
 // Navigation code here
+
+.nav-container
+{
+    .display(space-between);
+    flex-flow: column;
+    height: 100px;
+    background: @nav-bg;
+    border-bottom: 2px solid @nav-border;
+    padding: 10px 0;
+
+
+    h1
+    {
+        font-size: 3.6rem;
+    }
+
+    nav
+    {
+        .display();
+        min-width: 380px;
+
+        a
+        {
+            text-decoration: none;
+            color: @nav-font;
+            font-size: 1.4rem;
+
+            &:hover
+            {
+                .spin();
+            }
+        }
+    }
+}
