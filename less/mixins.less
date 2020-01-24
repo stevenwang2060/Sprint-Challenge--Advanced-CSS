@@ -1,1 +1,49 @@
 // Mixins Here
+
+.display(@justify: space-evenly, @align: center)
+{
+    display: flex;
+    justify-content: @justify;
+    align-items: @align;
+}
+
+.button(@w: 100px, @h: 30px)
+{
+    .display();
+    width: @w;
+    height: @h;
+    background: @btn-bg-color;
+    color:white;
+    font-size: 1.8rem;
+    border-radius: 5px;
+
+    &:hover
+    {
+        background: lighten(@btn-bg-color, 50%);
+        color: @btn-bg-color;
+        .spin();
+    }
+}
+
+.mobilepfont()
+{
+    font-weight: 600;
+    font-size: @mobilep;
+}
+
+.spin()
+{
+    animation-name: spin;
+    animation-duration: 5000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
